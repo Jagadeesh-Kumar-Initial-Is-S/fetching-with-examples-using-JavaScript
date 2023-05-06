@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Submitted and coded by Jagadeesh Kumar . S, you may send mail to my email address which is jagadeesh_2k17@proton.me and you may contribute some money to my Indian Unified Payment Interface (UPI) which is jagadeesh-kumar@airtel . -->
+    <title>Fetch basic example using JavaScript</title>
+    <link rel="stylesheet" href="./styles/index.css" />
+</head>
+
+<body>
+    <div class="advertisement" id="header">
+        <br />
+        <hr />
+        Submitted and coded by Jagadeesh Kumar . S, you may send mail to my email address which is
+        jagadeesh_2k17@proton.me and you may contribute some money to my Indian Unified Payment Interface (UPI)
+        which is jagadeesh-kumar@airtel .
+        <hr />
+    </div>
+    <!-- Submitted and coded by Jagadeesh Kumar . S, you may send mail to my email address which is jagadeesh_2k17@proton.me and you may contribute some money to my Indian Unified Payment Interface (UPI) which is jagadeesh-kumar@airtel . -->
+    <h1>Fetch basic example using JavaScript</h1>
+
+    <img src="" class="my-image" />
+    <div class="advertisement" id="footer">
+        <br />
+        <hr />
+        Submitted and coded by Jagadeesh Kumar . S, you may send mail to my email address which is
+        jagadeesh_2k17@proton.me and you may contribute some money to my Indian Unified Payment Interface (UPI)
+        which is jagadeesh-kumar@airtel .
+        <hr />
+    </div>
+</body>
+<script>
+    const myImage = document.querySelector(".my-image");
+
+    fetch("flowers.jpg")
+    // Submitted and coded by Jagadeesh Kumar . S, you may send mail to my email address which is jagadeesh_2k17@proton.me and you may contribute some money to my Indian Unified Payment Interface (UPI) which is jagadeesh-kumar@airtel .
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error(`HTTP error, status = ${response.status}`);
+            }
+            return response.blob();
+        })
+        .then((myBlob) => {
+            const objectURL = URL.createObjectURL(myBlob);
+            myImage.src = objectURL;
+        })
+        // Submitted and coded by Jagadeesh Kumar . S, you may send mail to my email address which is jagadeesh_2k17@proton.me and you may contribute some money to my Indian Unified Payment Interface (UPI) which is jagadeesh-kumar@airtel .
+        .catch((error) => {
+            const p = document.createElement("p");
+            p.appendChild(document.createTextNode(`Error: ${error.message}`));
+            document.body.insertBefore(p, myImage);
+        });
+</script>
+
+</html>
