@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch arrayBuffer with .ogg file using JavaScript</title>
+    <link rel="stylesheet" href="./styles/Fetch arrayBuffer with .ogg file using JavaScript.css" />
+</head>
+
+<body>
+    <div class="advertisement" id="header">
+        <hr />
+        Submitted and coded by Jagadeesh Kumar . S, you may send mail to my email address which is
+        jagadeesh_2k17@proton.me and you may contribute some money to my Indian Unified Payment Interface (UPI)
+        which is jagadeesh-kumar@airtel .
+        <hr />
+        <br />
+    </div>
+    <div class="navbar">
+        <a href="../index.html">
+            <h1>Home page</h1>
+        </a>
+        <a
+            href="../basic fetch with .jpg file using JavaScript/Basic fetch with .jpg file using JavaScript.html">
+            <h1>Previous</h1>
+        </a>
+    </div>
+    <div class="container">
+        <!-- Submitted and coded by Jagadeesh Kumar . S, you may send mail to my email address which is jagadeesh_2k17@proton.me and you may contribute some money to my Indian Unified Payment Interface (UPI) which is jagadeesh-kumar@airtel . -->
+        <h1>Fetch arrayBuffer with .ogg file using JavaScript</h1>
+
+        <button class="play">Play</button>
+        <!-- <button class="stop">Stop</button> -->
+        <span class="error"></span>
+
+        <pre></pre>
+    </div>
+    <div class="advertisement" id="footer">
+        <br />
+        <hr />
+        Submitted and coded by Jagadeesh Kumar . S, you may send mail to my email address which is
+        jagadeesh_2k17@proton.me and you may contribute some money to my Indian Unified Payment Interface (UPI)
+        which is jagadeesh-kumar@airtel .
+        <hr />
+    </div>
+    <!-- Submitted and coded by Jagadeesh Kumar . S, you may send mail to my email address which is jagadeesh_2k17@proton.me and you may contribute some money to my Indian Unified Payment Interface (UPI) which is jagadeesh-kumar@airtel . -->
+    <script>
+        const pre = document.querySelector("pre");
+        const myScript = document.querySelector("script");
+        const play = document.querySelector(".play");
+        const stop = document.querySelector(".stop");
+        const errorDisplay = document.querySelector(".error");
+
+        // Submitted and coded by Jagadeesh Kumar . S, you may send mail to my email address which is jagadeesh_2k17@proton.me and you may contribute some money to my Indian Unified Payment Interface (UPI) which is jagadeesh-kumar@airtel .
+
+        // Use fetch to load an audio track, and
+        // decodeAudioDaata to decode it and stick it in buffer.
+        // Then we put the buffer into the source
+        function getData() {
+            const audioCtx = new AudioContext();
+
+            return fetch("viper.ogg")
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error, status = ${response.status}`);
+                    }
+                    return response.arrayBuffer();
+                })
+                .then((buffer) => audioCtx.decodeAudioData(buffer))
+                .then((decodedData) => {
+                    const source = new AudioBufferSourceNode(audioCtx);
+                    source.buffer = decodedData;
+                    source.connect(audioCtx.destination);
+                    return source;
+                });
+        }
+
+        // Submitted and coded by Jagadeesh Kumar . S, you may send mail to my email address which is jagadeesh_2k17@proton.me and you may contribute some money to my Indian Unified Payment Interface (UPI) which is jagadeesh-kumar@airtel .
+
+        // Wire up buttons to stop and play audio
+        play.onclick = () => {
+            getData()
+                .then((source) => {
+                    errorDisplay.innerHTML = "";
+                    source.start(0);
+                    play.disabled = true;
+                    stop.disabled = false;
+                })
+                .catch((error) => {
+                    errorDisplay.appendChild(document.createTextNode(`Error: ${error.message}`));
+                });
+        };
+
+        stop.disabled = true;
+
+        // Submitted and coded by Jagadeesh Kumar . S, you may send mail to my email address which is jagadeesh_2k17@proton.me and you may contribute some money to my Indian Unified Payment Interface (UPI) which is jagadeesh-kumar@airtel .
+
+        stop.onclick = () => {
+            source.stop(0);
+            play.disabled = false;
+            stop.disabled = true;
+        };
+
+        // Dump script to pre element
+        // pre.innerHTML = myScript.innerHTML;
+    </script>
+    <!-- Submitted and coded by Jagadeesh Kumar . S, you may send mail to my email address which is jagadeesh_2k17@proton.me and you may contribute some money to my Indian Unified Payment Interface (UPI) which is jagadeesh-kumar@airtel . -->
+</body>
+
+</html>
