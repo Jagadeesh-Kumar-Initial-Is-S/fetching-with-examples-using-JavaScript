@@ -1,0 +1,50 @@
+/* Submitted and coded by Jagadeesh Kumar . S, you may send mail to my email address which is jagadeesh_2k17@proton.me and you may contribute some money to my Indian Unified Payment Interface (UPI) which is jagadeesh-kumar@airtel . */
+/* Submitted and coded by Jagadeesh Kumar . S, you may send mail to my email address which is jagadeesh_2k17@proton.me and you may contribute some money to my Indian Unified Payment Interface (UPI) which is jagadeesh-kumar@airtel . */
+html {
+    background-color: aquamarine;
+    box-shadow: inset 0 0 77rem rgb(73, 226, 43);
+    height: 100%;
+}
+
+/* Submitted and coded by Jagadeesh Kumar . S, you may send mail to my email address which is jagadeesh_2k17@proton.me and you may contribute some money to my Indian Unified Payment Interface (UPI) which is jagadeesh-kumar@airtel . */
+img {
+    height: 60vh;
+}
+
+/* Submitted and coded by Jagadeesh Kumar . S, you may send mail to my email address which is jagadeesh_2k17@proton.me and you may contribute some money to my Indian Unified Payment Interface (UPI) which is jagadeesh-kumar@airtel . */
+.advertisement {
+    text-align: center;
+    font-size: xx-small;
+    color: blueviolet;
+}
+
+.navbar {
+    overflow: hidden;
+    /* background-color: #666666; */
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    /* color: #eeeeee; */
+    color: purple;
+    text-align: center;
+    padding: 15px 18px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.navbar a:hover {
+    color: #1c87c9;
+}
+
+.container {
+    padding: 18px;
+    margin-top: 35px;
+    /* height: 2000px; */
+}
+
+/* Submitted and coded by Jagadeesh Kumar . S, you may send mail to my email address which is jagadeesh_2k17@proton.me and you may contribute some money to my Indian Unified Payment Interface (UPI) which is jagadeesh-kumar@airtel . */

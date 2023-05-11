@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>fetch .json file using JavaScript</title>
+    <link rel="stylesheet" href="./styles/fetch .json file using JavaScript.css" />
 </head>
 
 <body>
@@ -21,7 +22,9 @@
         <a href="../index.html">
             <h1>Home page</h1>
         </a>
-        <a href="../basic fetch with .jpg file using JavaScript/Basic fetch with .jpg file using JavaScript.html">
+        <!-- Submitted and coded by Jagadeesh Kumar . S, you may send mail to my email address which is jagadeesh_2k17@proton.me and you may contribute some money to my Indian Unified Payment Interface (UPI) which is jagadeesh-kumar@airtel . -->
+        <a
+            href="../Fetch arrayBuffer with .ogg file using JavaScript/Fetch arrayBuffer with .ogg file using JavaScript.html">
             <h1>Previous</h1>
         </a>
     </div>
@@ -31,6 +34,7 @@
     </div>
     <div class="advertisement" id="footer">
         <br />
+        <!-- Submitted and coded by Jagadeesh Kumar . S, you may send mail to my email address which is jagadeesh_2k17@proton.me and you may contribute some money to my Indian Unified Payment Interface (UPI) which is jagadeesh-kumar@airtel . -->
         <hr />
         Submitted and coded by Jagadeesh Kumar . S, you may send mail to my email address which is
         jagadeesh_2k17@proton.me and you may contribute some money to my Indian Unified Payment Interface (UPI)
@@ -38,27 +42,41 @@
         <hr />
     </div>
     <!-- Submitted and coded by Jagadeesh Kumar . S, you may send mail to my email address which is jagadeesh_2k17@proton.me and you may contribute some money to my Indian Unified Payment Interface (UPI) which is jagadeesh-kumar@airtel . -->
-<script>
-    const myList = document.querySelector("ul");
+    <script>
+        const myList = document.querySelector("ul");
 
-    fetch("./.json file/products.json")
-    .then((response) => {
-        if (!resopnse.ok){
-            throw new Error(`HTTP error, status = ${response.status}`);
-        }
-        return response.json();
-    })
-    .then((data) => {
-        for (const product of data.products) {
-            const listItem = document.createElement("li");
+        fetch("./.json file/products.json")
+            .then((response) => {
+                if (!resopnse.ok) {
+                    throw new Error(`HTTP error, status = ${response.status}`);
+                }
+                return response.json();
+            })
+            .then((data) => {
+                for (const product of data.products) {
+                    const listItem = document.createElement("li");
 
-            const nameElement = document.createelement("strong");
-            nameElement.textContent = product.Name;
+                    const nameElement = document.createelement("strong");
+                    nameElement.textContent = product.Name;
 
-            const priceElement = document.createElement("strong")
-        }
-    })
-</script>
+                    const priceElement = document.createElement("strong");
+                    priceElement.textContent = `£${product.Price}`;
+
+                    listItem.append(
+                        nameElement,
+                        ` can be found in ${product.Location}. Cost: `,
+                        priceElement,
+                    );
+                    myList.appendChild(listItem);
+                }
+            })
+            // Submitted and coded by Jagadeesh Kumar . S, you may send mail to my email address which is jagadeesh_2k17@proton.me and you may contribute some money to my Indian Unified Payment Interface (UPI) which is jagadeesh-kumar@airtel .
+            .catch((error) => {
+                const p = document.createElement("p");
+                p.appendChild(document.createTextNode(`Error: ${error.message}`));
+                document.body.insertBefore(p, myList);
+            });
+    </script>
 </body>
 
 </html>
