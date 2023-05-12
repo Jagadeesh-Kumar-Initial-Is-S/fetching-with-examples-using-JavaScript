@@ -44,8 +44,8 @@
     <!-- Submitted and coded by Jagadeesh Kumar . S, you may send mail to my email address which is jagadeesh_2k17@proton.me and you may contribute some money to my Indian Unified Payment Interface (UPI) which is jagadeesh-kumar@airtel . -->
     <script>
         const myList = document.querySelector("ul");
-
-        fetch("./.json file/products.json")
+        const json = "./.json file/products.json"
+        fetch(json)
             .then((response) => {
                 if (!resopnse.ok) {
                     throw new Error(`HTTP error, status = ${response.status}`);
